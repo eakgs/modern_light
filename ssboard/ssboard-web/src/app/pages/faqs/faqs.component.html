@@ -1,0 +1,66 @@
+<div class="min-h-screen py-20 px-6 max-w-5xl mx-auto">
+  <!-- Page Header -->
+  <div class="text-center mb-16">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+      <span class="text-gradient">Frequently Asked Questions</span>
+    </h1>
+    <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+      Everything you need to know about our light-board design, customization, and services.
+    </p>
+  </div>
+
+  <!-- FAQ Accordion -->
+  <div class="space-y-6">
+    <div
+      *ngFor="let item of faqs; let i = index"
+      class="glass-effect rounded-2xl p-6 transition-all duration-300 cursor-pointer"
+      (click)="toggle(i)"
+      [class.border-[var(--neon-cyan)]]="openIndex === i"
+      [class.bg-[rgba(0,255,224,0.05)]]="openIndex === i"
+    >
+      <div class="flex justify-between items-center">
+        <div class="flex items-center gap-3">
+          <div
+            class="w-8 h-8 rounded-full bg-[var(--neon-cyan)] text-black flex items-center justify-center font-bold shadow-md"
+          >
+            ?
+          </div>
+          <h3
+            class="text-lg md:text-xl font-semibold text-white hover:text-[var(--neon-cyan)] transition-colors"
+          >
+            {{ item.q }}
+          </h3>
+        </div>
+
+        <div
+          class="text-[var(--neon-cyan)] text-2xl transition-transform duration-300"
+          [class.rotate-45]="openIndex === i"
+        >
+          +
+        </div>
+      </div>
+
+      <div
+        class="overflow-hidden transition-all duration-300"
+        [style.maxHeight]="openIndex === i ? '200px' : '0'"
+      >
+        <p class="text-gray-400 mt-4 leading-relaxed">
+          {{ item.a }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="text-center mt-16">
+    <p class="text-gray-400 text-lg mb-6">
+      Still have questions? We’d love to hear from you.
+    </p>
+    <a
+      routerLink="/contact"
+      class="btn-primary inline-flex items-center gap-2 px-8 py-4 font-semibold"
+    >
+      Contact Us <span>➜</span>
+    </a>
+  </div>
+</div>

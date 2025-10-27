@@ -1,0 +1,36 @@
+<nav [ngClass]="isScrolled ? 'glass-effect py-4' : 'bg-transparent py-6'"
+     class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="flex items-center justify-between">
+      <!-- Brand -->
+      <a routerLink="/" class="text-2xl font-extrabold text-gradient">SSBoard</a>
+
+      <!-- Desktop -->
+      <div class="hidden md:flex items-center gap-8">
+        <a *ngFor="let item of navItems"
+           [routerLink]="item.path"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{ exact: true }"
+           class="nav-link text-sm">
+          {{ item.label }}
+        </a>
+      </div>
+
+      <!-- Mobile toggle -->
+      <button (click)="toggle()" class="md:hidden text-gray-300 hover:text-[var(--neon-cyan)]">
+        <span *ngIf="!isOpen">☰</span>
+        <span *ngIf="isOpen">✕</span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div *ngIf="isOpen" class="md:hidden mt-4 glass-effect rounded-lg p-5">
+      <a *ngFor="let item of navItems"
+         [routerLink]="item.path"
+         (click)="close()"
+         class="block py-2 nav-link">
+        {{ item.label }}
+      </a>
+    </div>
+  </div>
+</nav>

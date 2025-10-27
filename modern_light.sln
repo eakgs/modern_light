@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ssboard", "ssboard", "{BAA5FB92-CF6D-01D6-A556-2596B8749AD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ssboard.Api", "ssboard\Ssboard.Api\Ssboard.Api.csproj", "{1ED80E7B-70A2-D258-58E3-406BA35BEFFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1ED80E7B-70A2-D258-58E3-406BA35BEFFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ED80E7B-70A2-D258-58E3-406BA35BEFFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ED80E7B-70A2-D258-58E3-406BA35BEFFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ED80E7B-70A2-D258-58E3-406BA35BEFFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1ED80E7B-70A2-D258-58E3-406BA35BEFFE} = {BAA5FB92-CF6D-01D6-A556-2596B8749AD7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03F952EE-2974-4A23-A229-438FD89F7D57}
+	EndGlobalSection
+EndGlobal
