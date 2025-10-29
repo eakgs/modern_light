@@ -1,0 +1,137 @@
+/* ===== BG ORBS + RAYS ===== */
+.orb{position:absolute; border-radius:50%; filter:blur(180px); opacity:.15; pointer-events:none}
+.orb-cyan{width:40rem;height:40rem; left:-8rem; top:-10rem; background:var(--neon-cyan)}
+.orb-pink{width:48rem;height:48rem; right:-8rem; bottom:-12rem; background:var(--neon-pink)}
+.rays{
+  position:absolute; inset:0; pointer-events:none;
+  background:conic-gradient(from 210deg, transparent 0 20%, rgba(0,255,224,.06) 20% 30%, transparent 30% 55%, rgba(255,0,110,.06) 55% 65%, transparent 65% 100%);
+  mask-image: radial-gradient(90% 70% at 50% 20%, #000 55%, transparent 100%);
+  animation:raysMove 14s ease-in-out infinite alternate
+}
+@keyframes raysMove{0%{transform:translateY(0)}100%{transform:translateY(12px)}}
+
+/* header float */
+.float-slow{animation:floatHero 8s ease-in-out infinite}
+@keyframes floatHero{0%,100%{transform:translateY(0)}50%{transform:translateY(12px)}}
+@media (prefers-reduced-motion:reduce){.float-slow{animation:none}}
+
+/* ===== QUICK CHIPS ===== */
+.cta-chip{
+  position:relative; display:flex; align-items:center; gap:14px; padding:18px 16px; border-radius:16px;
+  background:rgba(20,20,20,.78); border:1px solid rgba(255,255,255,.08);
+  transition:transform .25s, box-shadow .25s, border-color .25s
+}
+.cta-chip:hover{transform:translateY(-3px); border-color:rgba(0,255,224,.35); box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.chip-glow{position:absolute; inset:auto -45% -50% auto; width:180px; height:180px; border-radius:50%;
+  background:radial-gradient(circle, rgba(0,255,224,.16), transparent 60%); filter:blur(18px); opacity:.35}
+.chip-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--neon-cyan);color:#000;font-weight:900;
+  box-shadow:0 0 0 6px rgba(0,255,224,.12), 0 0 22px rgba(0,255,224,.35) inset}
+.chip-title{color:#fff;font-weight:900;letter-spacing:.2px}
+.chip-sub{color:#b8b8b8;font-size:.95rem}
+.chip-arrow{margin-left:auto;color:var(--neon-cyan);transition:transform .25s}
+.cta-chip:hover .chip-arrow{transform:translateX(4px)}
+
+/* badge + tiny seal */
+.badge-premium{background:rgba(0,255,224,.08); border:1px solid rgba(0,255,224,.2); color:var(--neon-cyan); font-weight:800; border-radius:999px}
+.dot-online{width:6px;height:6px;border-radius:999px;background:var(--neon-cyan);box-shadow:0 0 8px rgba(0,255,224,.9)}
+.tiny-seal{font-size:.68rem; padding:.25rem .5rem; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1)}
+
+/* ===== NEON FORM CARD ===== */
+.neon-card{position:relative;border-radius:20px}
+.neon-border{position:absolute; inset:-1px; border-radius:22px; filter:blur(14px); opacity:.35;
+  background:conic-gradient(from 120deg, var(--neon-cyan), transparent 45%, var(--neon-pink), transparent 75%, var(--neon-cyan));
+  animation:spin 12s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.neon-body{position:relative; background:rgba(20,20,20,.86); border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:28px}
+
+/* progress dots */
+.progress-dots{display:flex; gap:10px; counter-reset:step}
+.progress-dots li{
+  position:relative; padding-left:28px; font-weight:800; color:#7e8a93; font-size:.85rem
+}
+.progress-dots li::before{
+  content:counter(step); counter-increment:step; position:absolute; left:0; top:50%; transform:translateY(-50%);
+  width:22px;height:22px;border-radius:999px; display:grid; place-items:center;
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); color:#cfd6dc
+}
+.progress-dots li.active{color:var(--neon-cyan)}
+.progress-dots li.active::before{background:var(--neon-cyan); color:#000; box-shadow:0 0 14px rgba(0,255,224,.35)}
+
+/* fields */
+.field-label{color:#cfd6dc;font-weight:800;margin-bottom:.45rem;display:block}
+.field-wrap{position:relative}
+.field-icon{
+  position:absolute; left:12px; top:50%; transform:translateY(-50%); width:28px;height:28px;border-radius:8px;
+  display:grid;place-items:center;background:rgba(255,255,255,.06); color:var(--neon-cyan); border:1px solid rgba(255,255,255,.08)
+}
+.field-control{padding-left:52px !important}
+.char-hint{position:absolute;right:10px;bottom:10px;font-size:.78rem;color:#7f8b94}
+
+/* pill toggle */
+.pill-toggle{display:flex; gap:6px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); border-radius:999px; padding:4px}
+.pill-toggle input{display:none}
+.pill-toggle label{
+  padding:.4rem .8rem; font-weight:800; font-size:.85rem; color:#cfd6dc; border-radius:999px; cursor:pointer; transition:all .2s
+}
+#pref-email:checked + label, #pref-whatsapp:checked + label, #pref-call:checked + label{
+  background:linear-gradient(135deg, var(--neon-cyan), var(--neon-pink)); color:#000; box-shadow:0 0 12px rgba(0,255,224,.25)
+}
+
+/* range */
+.range-wrap{padding:.6rem .2rem .2rem}
+.range{width:100%}
+.range::-webkit-slider-thumb{appearance:none; width:18px;height:18px;border-radius:999px;background:var(--neon-cyan); box-shadow:0 0 0 6px rgba(0,255,224,.15)}
+.range-scale{display:flex; justify-content:space-between; color:#8a96a0; font-size:.75rem; margin-top:.2rem}
+
+/* upload pill */
+.upload-pill{
+  display:inline-flex; align-items:center; gap8:8px; gap:8px; padding:.6rem .9rem;
+  border-radius:999px; border:1px dashed rgba(0,255,224,.35); color:#cfd6dc; cursor:pointer;
+  background:rgba(0,255,224,.06); transition:border-color .2s, transform .2s
+}
+.upload-pill:hover{transform:translateY(-1px); border-color:var(--neon-cyan)}
+.upload-dot{width:8px;height:8px;border-radius:999px;background:var(--neon-cyan); box-shadow:0 0 10px rgba(0,255,224,.6)}
+
+/* ===== INFO STACK ===== */
+.stack{display:grid; gap:10px}
+.stack-row{display:flex; gap:12px; align-items:flex-start}
+.stack-icon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--neon-cyan);color:#000;font-weight:900;
+  box-shadow:0 0 0 6px rgba(0,255,224,.12), 0 0 22px rgba(0,255,224,.35) inset}
+.stack-title{color:#fff;font-weight:900}
+.stack-sub{color:#b8b8b8}
+
+/* ===== MAP ===== */
+.map-stub{
+  position:relative; height:230px; border-radius:14px; overflow:hidden;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.55)),
+    repeating-linear-gradient(90deg, rgba(0,255,224,.08), rgba(0,255,224,.08) 2px, transparent 2px, transparent 16px),
+    radial-gradient(circle at 35% 40%, rgba(0,255,224,.25), transparent 35%),
+    radial-gradient(circle at 70% 65%, rgba(255,0,110,.18), transparent 35%);
+  border:1px solid rgba(255,255,255,.08)
+}
+.map-pin{position:absolute; left:50%; top:48%; transform:translate(-50%,-50%); width:14px;height:14px;border-radius:999px;background:var(--neon-cyan); box-shadow:0 0 0 8px rgba(0,255,224,.12), 0 0 22px rgba(0,255,224,.6)}
+.map-tag{position:absolute; left:50%; top:62%; transform:translateX(-50%); padding:.35rem .6rem; font-size:.75rem; border-radius:8px; color:#000; font-weight:900; background:var(--neon-cyan); box-shadow:0 8px 30px rgba(0,255,224,.25)}
+
+/* mini faq */
+.faq-mini{display:grid; gap:.45rem; color:#cfd6dc}
+.faq-mini b{color:#fff}
+
+/* social */
+.social-round{
+  width:42px;height:42px;border-radius:9999px; display:flex; align-items:center; justify-content:center;
+  background:rgba(255,255,255,.05); border:1px solid rgba(0,255,224,.15); color:var(--neon-cyan); transition:all .25s
+}
+.social-round:hover{color:#000; background:var(--neon-cyan); transform:translateY(-2px)}
+
+/* floating dock */
+.dock{
+  position:fixed; right:18px; bottom:22px; z-index:40;
+  display:flex; flex-direction:column; gap:10px
+}
+.dock-btn{
+  width:46px;height:46px;border-radius:14px; display:grid; place-items:center; background:rgba(20,20,20,.92);
+  border:1px solid rgba(255,255,255,.1); color:var(--neon-cyan);
+  box-shadow:0 6px 18px rgba(0,0,0,.35); transition:transform .2s, box-shadow .2s, color .2s
+}
+.dock-btn:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.45); color:#000; background:var(--neon-cyan)}

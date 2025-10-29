@@ -251,7 +251,7 @@ body{
 }
 /* Gentle vertical float for hero content */
 .float-slow {
-  animation: hero-float 10s ease-in-out infinite;
+  animation: hero-float 5s ease-in-out infinite;
   will-change: transform;
   transform: translateZ(0); /* avoids subpixel blur on some GPUs */
 }

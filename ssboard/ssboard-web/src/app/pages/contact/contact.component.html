@@ -1,204 +1,375 @@
-<div class="min-h-screen py-20 px-6 max-w-6xl mx-auto">
-  <!-- Header -->
-  <div class="text-center mb-16">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4">
-      <span class="text-gradient">Get in Touch</span>
-    </h1>
-    <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-      Ready to illuminate your brand? Let’s start something extraordinary together.
-    </p>
-  </div>
+<!-- =========================
+   SSBoard • Contact (Neon Clean)
+   - Tailwind + your global CSS (no overlay elements)
+   - A11y-first, responsive, minimal JS
+   - Drop-in for Angular/React/Vue
+========================== -->
+<section id="contact" class="hero-section px-6 md:px-8 text-white">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <header class="text-center mb-12 md:mb-16">
+      <span class="badge-pulse">We reply within 24h</span>
+      <h1 class="mt-4 text-4xl md:text-6xl font-extrabold leading-tight">
+        <span class="text-gradient">Let’s build your </span>
+         <span class="neon-glow text-white">Board</span>
+      </h1>
+      <p class="mt-4 text-base md:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Tell us your idea, size, and deadline. We’ll sketch a free preview and quote — same day.
+      </p>
+    </header>
 
-  <!-- Contact Grid -->
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-    <!-- ====== Contact Form ====== -->
-    <div class="glass-effect p-8 rounded-2xl shadow-lg backdrop-blur-md">
-      <h2 class="text-2xl font-bold mb-6 text-[var(--neon-cyan)]">
-        Send Us a Message 💬
-      </h2>
+    <!-- Quick facts -->
+    <ul class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12" role="list">
+      <li class="feature-card p-4 md:p-5">
+        <div class="feature-icon">⚡</div>
+        <p class="text-center text-sm text-white/70">Quote in</p>
+        <p class="text-center font-extrabold text-xl">24 hours</p>
+      </li>
+      <li class="feature-card p-4 md:p-5">
+        <div class="feature-icon">★</div>
+        <p class="text-center text-sm text-white/70">Client rating</p>
+        <p class="text-center font-extrabold text-xl">4.9 / 5</p>
+      </li>
+      <li class="feature-card p-4 md:p-5">
+        <div class="feature-icon">🛠️</div>
+        <p class="text-center text-sm text-white/70">Experience</p>
+        <p class="text-center font-extrabold text-xl">10+ years</p>
+      </li>
+      <li class="feature-card p-4 md:p-5">
+        <div class="feature-icon">🚚</div>
+        <p class="text-center text-sm text-white/70">Island-wide</p>
+        <p class="text-center font-extrabold text-xl">Delivery</p>
+      </li>
+    </ul>
 
-      <form class="space-y-5">
-        <div>
-          <label class="block text-gray-300 mb-2 font-semibold">Full Name</label>
-          <input
-            type="text"
-            class="form-input"
-            placeholder="Enter your name"
-            required
-          />
-        </div>
-
-        <div>
-          <label class="block text-gray-300 mb-2 font-semibold">Email</label>
-          <input
-            type="email"
-            class="form-input"
-            placeholder="Enter your email"
-            required
-          />
-        </div>
-
-        <div>
-          <label class="block text-gray-300 mb-2 font-semibold">Subject</label>
-          <input
-            type="text"
-            class="form-input"
-            placeholder="What’s your message about?"
-          />
-        </div>
-
-        <div>
-          <label class="block text-gray-300 mb-2 font-semibold">Message</label>
-          <textarea
-            rows="5"
-            class="form-input resize-none"
-            placeholder="Type your message..."
-            required
-          ></textarea>
-        </div>
-
-        <button
-          type="submit"
-          class="btn-primary w-full mt-4 justify-center gap-2 font-semibold text-base"
-        >
-          Send Message
-          <span>➜</span>
-        </button>
-      </form>
-    </div>
-
-    <!-- ====== Contact Info ====== -->
-    <div class="glass-effect p-8 rounded-2xl text-gray-300 flex flex-col justify-between">
-      <div>
-        <h2 class="text-2xl font-bold mb-6 text-[var(--neon-cyan)]">
-          Our Contact Details ✨
+    <!-- Main -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+      <!-- Contact form -->
+      <main class="glow-card p-6 md:p-8" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" class="text-2xl md:text-3xl font-extrabold mb-1">
+          <span class="text-gradient">Start a project</span>
         </h2>
+        <p class="text-white/70 mb-6">Add details for the fastest, most accurate quote.</p>
 
-        <div class="space-y-6">
-          <div class="flex items-start gap-4">
-            <div
-              class="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--neon-cyan)] text-black shadow-md"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                class="w-5 h-5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M2.25 6.75l8.954 4.477a2.25 2.25 0 002.092 0l8.954-4.477M2.25 6.75v10.5a2.25 2.25 0 002.25 2.25h15a2.25 2.25 0 002.25-2.25V6.75M12 12.75l8.955-4.477"
-                />
-              </svg>
+        <form id="contactForm" class="space-y-5" novalidate aria-describedby="formStatus">
+          <!-- Honeypot -->
+          <input type="text" name="company" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="fullName" class="block text-sm font-semibold text-white/80 mb-2">Full name</label>
+              <input id="fullName" name="fullName" type="text" required placeholder="Jane Doe" autocomplete="name" class="form-input" aria-invalid="false" aria-describedby="nameHint nameErr">
+              <p id="nameHint" class="mt-1 text-xs text-white/50">So we can address you properly.</p>
+              <p id="nameErr" class="mt-1 hidden text-sm text-[var(--neon-pink)]" data-error-for="fullName">Please enter your name.</p>
             </div>
             <div>
-              <h3 class="text-lg font-semibold text-white">Email</h3>
-              <p class="text-gray-400">info@ssboard.lk</p>
+              <label for="email" class="block text-sm font-semibold text-white/80 mb-2">Email</label>
+              <input id="email" name="email" type="email" required placeholder="you@email.com" autocomplete="email" class="form-input" aria-invalid="false" aria-describedby="emailErr">
+              <p id="emailErr" class="mt-1 hidden text-sm text-[var(--neon-pink)]" data-error-for="email">Enter a valid email.</p>
             </div>
           </div>
 
-          <div class="flex items-start gap-4">
-            <div
-              class="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--neon-cyan)] text-black shadow-md"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                class="w-5 h-5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M2.25 8.25c0-1.518 1.232-2.75 2.75-2.75h3.354a.75.75 0 01.53.22l2.646 2.646a.75.75 0 01.22.53v2.354a.75.75 0 01-.22.53l-2.646 2.646a.75.75 0 01-.53.22H5a2.75 2.75 0 01-2.75-2.75v-5.5zM16 6h3.5A2.5 2.5 0 0122 8.5v7A2.5 2.5 0 0119.5 18H16m0-12v12"
-                />
-              </svg>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="phone" class="block text-sm font-semibold text-white/80 mb-2">Phone (WhatsApp)</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+94 77 123 4567" autocomplete="tel" class="form-input">
             </div>
             <div>
-              <h3 class="text-lg font-semibold text-white">Phone</h3>
-              <p class="text-gray-400">+94 77 123 4567</p>
+              <label for="subject" class="block text-sm font-semibold text-white/80 mb-2">Subject</label>
+              <input id="subject" name="subject" type="text" placeholder="Custom neon for storefront" class="form-input">
             </div>
           </div>
 
-          <div class="flex items-start gap-4">
-            <div
-              class="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--neon-cyan)] text-black shadow-md"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                class="w-5 h-5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25zM12 7.5v4.125l2.625 1.875"
-                />
-              </svg>
+          <!-- Quick chips -->
+          <div>
+            <p class="text-sm uppercase tracking-wide text-white/60 mb-2">Type</p>
+            <div class="flex flex-wrap items-center gap-2" role="group" aria-label="Neon type">
+              <button type="button" class="neon-chip active" data-chip="Indoor" aria-pressed="true">Indoor</button>
+              <button type="button" class="neon-chip" data-chip="Outdoor" aria-pressed="false">Outdoor</button>
+              <button type="button" class="neon-chip" data-chip="RGB" aria-pressed="false">RGB</button>
+              <button type="button" class="neon-chip" data-chip="Logo" aria-pressed="false">Logo</button>
+              <button type="button" class="neon-chip" data-chip="Event" aria-pressed="false">Event</button>
             </div>
-            <div>
-              <h3 class="text-lg font-semibold text-white">Address</h3>
-              <p class="text-gray-400">
-                Colombo, Sri Lanka <br />
-                Open: Mon–Sat, 9 AM – 6 PM
-              </p>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-semibold text-white/80 mb-2">Message</label>
+            <textarea id="message" name="message" rows="6" required
+              placeholder="Describe text/logo, approx size (cm), color(s), indoor/outdoor, deadline, and any reference links."
+              class="form-input resize-y" aria-invalid="false" aria-describedby="msgErr"></textarea>
+            <p id="msgErr" class="mt-1 hidden text-sm text-[var(--neon-pink)]" data-error-for="message">Please add a short brief.</p>
+            <p class="text-xs text-white/50 mt-2">Tip: clicking the chips above will append to your message.</p>
+          </div>
+
+          <!-- Optional file -->
+          <div>
+            <label for="artwork" class="block text-sm font-semibold text-white/80 mb-2">Attach logo / artwork (optional)</label>
+            <div class="glow-card p-4 flex items-center gap-3">
+              <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 16V4m0 0l-4 4m4-4l4 4M8 20h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <input id="artwork" name="artwork" type="file" accept=".png,.svg,.pdf,.jpg,.jpeg" class="form-input file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:bg-white/10 file:text-white/90 file:hover:bg-white/20" aria-describedby="fileHint">
+              <span id="fileName" class="text-sm text-white/60"></span>
+            </div>
+            <p id="fileHint" class="mt-2 text-xs text-white/50">PNG/SVG/PDF/JPG, max 10MB.</p>
+          </div>
+
+          <!-- Consent -->
+          <div class="flex items-start gap-3">
+            <input id="consent" type="checkbox" class="mt-1 size-4 rounded border-[var(--dark-border)] bg-[var(--dark-surface)] text-[var(--neon-cyan)]" required aria-describedby="consentHint">
+            <label for="consent" class="text-sm text-white/70">
+              I agree to the <a href="/privacy" class="underline decoration-dotted underline-offset-4 hover:text-[var(--neon-cyan)]">privacy policy</a>.
+            </label>
+          </div>
+
+          <!-- Actions -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+            <button type="submit" class="btn-primary sm:col-span-2" aria-live="polite">
+              <span id="submitLabel">Send Message</span>
+              <span class="arrow">→</span>
+              <svg id="submitSpinner" class="hidden size-5 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" opacity=".25"></circle>
+                <path d="M22 12a10 10 0 0 1-10 10"></path>
+              </svg>
+            </button>
+            <a class="btn-ghost" href="https://wa.me/94771234567" target="_blank" rel="noopener">
+              WhatsApp <span class="arrow">↗</span>
+            </a>
+          </div>
+
+          <p id="formSuccess" class="mt-4 hidden rounded-xl border border-emerald-400/30 bg-emerald-400/10 p-3 text-sm text-emerald-300" role="status" aria-live="polite">
+            Thanks! Your message is in. We’ll get back within 24 hours.
+          </p>
+          <p id="formError" class="mt-4 hidden rounded-xl border border-[var(--neon-pink)]/40 bg-[color:rgba(255,0,110,.1)] p-3 text-sm text-[var(--neon-pink)]" role="alert" aria-live="assertive">
+            Oops—something went wrong. Please try again or call us directly.
+          </p>
+          <span id="formStatus" class="sr-only" aria-live="polite"></span>
+        </form>
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="space-y-6" aria-labelledby="contact-alt">
+        <h2 id="contact-alt" class="sr-only">Other ways to contact us</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="glow-card p-6">
+            <div class="flex items-center gap-3">
+              <div class="icon feature-icon !m-0 !w-12 !h-12 text-2xl">✉️</div>
+              <div>
+                <p class="text-sm uppercase tracking-wide text-white/60">Email</p>
+                <p class="font-semibold text-lg">info@ssboard.lk</p>
+              </div>
+              <button type="button" class="ml-auto neon-chip text-xs" data-copy="info@ssboard.lk" aria-label="Copy email address">Copy</button>
+            </div>
+          </div>
+          <div class="glow-card p-6">
+            <div class="flex items-center gap-3">
+              <div class="icon feature-icon !m-0 !w-12 !h-12 text-2xl">📞</div>
+              <div>
+                <p class="text-sm uppercase tracking-wide text-white/60">Phone</p>
+                <p class="font-semibold text-lg">
+                  <a class="hover:text-[var(--neon-cyan)]" href="tel:+94771234567">+94 77 123 4567</a>
+                </p>
+              </div>
+              <a class="ml-auto neon-chip text-xs" target="_blank" rel="noopener" href="https://wa.me/94771234567" aria-label="Open WhatsApp">WhatsApp</a>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Social icons -->
-      <div class="flex gap-4 mt-10">
-        <!-- Facebook -->
-        <a
-          href="https://facebook.com/ssboard"
-          target="_blank"
-          class="social-btn"
-          aria-label="Facebook"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M18 2h-3a4 4 0 0 0-4 4v3H8v4h3v9h4v-9h3l1-4h-4V6a1 1 0 0 1 1-1h3z"
-            />
-          </svg>
-        </a>
+        <!-- Interest chips -->
+        <div class="glow-card p-6">
+          <p class="text-sm uppercase tracking-wide text-white/60 mb-3">I’m interested in</p>
+          <div class="flex flex-wrap gap-2" role="group" aria-label="Interest">
+            <button type="button" class="neon-chip active" data-chip="Storefront" aria-pressed="true">Storefront</button>
+            <button type="button" class="neon-chip" data-chip="Logo Neon" aria-pressed="false">Logo Neon</button>
+            <button type="button" class="neon-chip" data-chip="Stage / Event" aria-pressed="false">Stage / Event</button>
+            <button type="button" class="neon-chip" data-chip="Room Decor" aria-pressed="false">Room Decor</button>
+            <button type="button" class="neon-chip" data-chip="RGB Animation" aria-pressed="false">RGB Animation</button>
+            <button type="button" class="neon-chip" data-chip="Repair / Replace" aria-pressed="false">Repair / Replace</button>
+          </div>
+          <p class="text-xs text-white/50 mt-3">Click to append to your message.</p>
+        </div>
 
-        <!-- Instagram -->
-        <a
-          href="https://instagram.com/ssboard"
-          target="_blank"
-          class="social-btn"
-          aria-label="Instagram"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <rect x="3" y="3" width="18" height="18" rx="4" ry="4" />
-            <circle cx="12" cy="12" r="3.5" />
-            <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" />
-          </svg>
-        </a>
+        <!-- Social -->
+        <div class="glow-card p-6">
+          <p class="text-sm uppercase tracking-wide text-white/60 mb-3">Social</p>
+          <div class="flex items-center gap-3">
+            <a class="social-btn" href="https://facebook.com/ssboard" target="_blank" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h-3a4 4 0 0 0-4 4v3H6v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a class="social-btn" href="https://instagram.com/ssboard" target="_blank" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm5 4a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm5.5-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg>
+            </a>
+            <a class="social-btn" href="https://x.com/ssboard" target="_blank" aria-label="X">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l8.5 9.5L3 21h3.5L12 14l5.5 7H21l-8.5-8.5L21 3h-3.5L12 10 6.5 3z"/></svg>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
 
-        <!-- X (Twitter) -->
-        <a
-          href="https://x.com/ssboard"
-          target="_blank"
-          class="social-btn"
-          aria-label="X"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M3 3h3.9l5.6 7.4L18.2 3H21l-7.7 9.8L21 21h-3.9l-5.9-7.8L5.6 21H3l8.1-10.3L3 3z"
-            />
-          </svg>
-        </a>
+    <!-- CTA footer -->
+    <div class="highlight-card mt-12 md:mt-16 rounded-2xl border border-[var(--dark-border)] p-6 md:p-8 bg-[rgba(255,255,255,.04)]">
+      <div class="grid md:grid-cols-3 gap-6 items-center">
+        <div class="md:col-span-2">
+          <h3 class="text-2xl md:text-3xl font-extrabold">Ready to light up your brand?</h3>
+          <p class="text-white/70">Send your logo or idea — we’ll craft a free preview today.</p>
+        </div>
+        <div class="flex gap-3 md:justify-end">
+          <a href="#contactForm" class="btn-primary">Start a Project <span class="arrow">→</span></a>
+          <a href="tel:+94771234567" class="btn-ghost">Call Now <span class="arrow">↗</span></a>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"SSBoard",
+    "url":"https://ssboard.com/",
+    "logo":"https://ssboard.com/logo.png",
+    "contactPoint":[{
+      "@type":"ContactPoint",
+      "telephone":"+94-77-123-4567",
+      "contactType":"customer service",
+      "email":"info@ssboard.lk",
+      "areaServed":"LK",
+      "availableLanguage":["en","si"]
+    }],
+    "sameAs":[
+      "https://facebook.com/ssboard",
+      "https://instagram.com/ssboard",
+      "https://x.com/ssboard"
+    ]
+  }
+  </script>
+
+  <!-- Minimal JS (no overlays) -->
+  <script>
+  (() => {
+    const qs = (s, r=document) => r.querySelector(s);
+    const qsa = (s, r=document) => Array.from(r.querySelectorAll(s));
+    const form = qs('#contactForm');
+    const submitLabel = qs('#submitLabel');
+    const submitSpinner = qs('#submitSpinner');
+    const success = qs('#formSuccess');
+    const error = qs('#formError');
+    const fileInput = qs('#artwork');
+    const fileName = qs('#fileName');
+
+    const show = el => el.classList.remove('hidden');
+    const hide = el => el.classList.add('hidden');
+
+    // Chips → append/remove to message
+    qsa('[data-chip]').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const pressed = chip.getAttribute('aria-pressed') === 'true';
+        chip.classList.toggle('active');
+        chip.setAttribute('aria-pressed', (!pressed).toString());
+        const value = chip.dataset.chip;
+        const msg = qs('#message');
+        const parts = msg.value.split('|').map(s => s.trim()).filter(Boolean);
+        if (!pressed) {
+          if (!parts.includes(value)) parts.push(value);
+        } else {
+          const i = parts.indexOf(value);
+          if (i > -1) parts.splice(i, 1);
+        }
+        msg.value = parts.join(' | ');
+      });
+    });
+
+    // Copy buttons
+    qsa('[data-copy]').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        try {
+          await navigator.clipboard.writeText(btn.dataset.copy);
+          const t = btn.textContent;
+          btn.textContent = 'Copied';
+          setTimeout(() => btn.textContent = t, 1200);
+        } catch {}
+      });
+    });
+
+    // File preview
+    fileInput?.addEventListener('change', () => {
+      const f = fileInput.files?.[0];
+      fileName.textContent = f ? `${f.name} • ${(f.size/1024/1024).toFixed(2)} MB` : '';
+    });
+
+    // Validation helper
+    function setInvalid(id, isInvalid) {
+      const field = qs('#' + id);
+      const hint = qs(`[data-error-for="${id}"]`);
+      if (!field || !hint) return;
+      field.classList.toggle('ring-2', isInvalid);
+      field.classList.toggle('ring-[var(--neon-pink)]/60', isInvalid);
+      field.setAttribute('aria-invalid', isInvalid ? 'true' : 'false');
+      hint.classList.toggle('hidden', !isInvalid);
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      hide(success); hide(error);
+
+      const nameOk = !!form.fullName.value.trim();
+      const emailOk = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(form.email.value);
+      const msgOk = !!form.message.value.trim();
+      const consentOk = form.querySelector('#consent')?.checked;
+
+      setInvalid('fullName', !nameOk);
+      setInvalid('email', !emailOk);
+      setInvalid('message', !msgOk);
+      if (!nameOk || !emailOk || !msgOk || !consentOk) return;
+
+      // Honeypot
+      if (form.company.value) return;
+
+      // Build payload
+      const attached = fileInput?.files?.[0];
+      submitLabel.textContent = 'Sending...';
+      submitSpinner.classList.remove('hidden');
+
+      try {
+        let res;
+        if (attached) {
+          const fd = new FormData();
+          fd.append('fullName', form.fullName.value);
+          fd.append('email', form.email.value);
+          fd.append('phone', form.phone.value);
+          fd.append('subject', form.subject.value);
+          fd.append('message', form.message.value);
+          fd.append('source', 'contact-page');
+          fd.append('file', attached, attached.name);
+          res = await fetch('/api/contact', { method: 'POST', body: fd });
+        } else {
+          res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              fullName: form.fullName.value,
+              email: form.email.value,
+              phone: form.phone.value,
+              subject: form.subject.value,
+              message: form.message.value,
+              source: 'contact-page'
+            })
+          });
+        }
+        if (!res.ok) throw new Error('Request failed');
+
+        form.reset();
+        fileName.textContent = '';
+        show(success);
+      } catch {
+        show(error);
+      } finally {
+        submitLabel.textContent = 'Send Message';
+        submitSpinner.classList.add('hidden');
+      }
+    });
+  })();
+  </script>
+</section>

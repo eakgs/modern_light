@@ -1,69 +1,133 @@
 <div class="min-h-screen py-20 px-6">
   <div class="container mx-auto max-w-7xl">
-    <!-- Header -->
-    <div class="text-center mb-16">
-      <h1 class="text-4xl md:text-6xl font-bold mb-6">
-        <span class="text-gradient">Our Gallery</span>
-      </h1>
-      <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-        Explore our collection of stunning light-board designs that have transformed spaces and captivated audiences across Sri Lanka
-      </p>
-    </div>
+    <!-- HERO / HEADLINE -->
+    <header class="relative overflow-hidden mb-14 rounded-3xl">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute -top-24 -left-10 w-[38rem] h-[38rem] bg-[var(--neon-cyan)] blur-3xl opacity-10 rounded-full"></div>
+        <div class="absolute top-1/2 right-0 w-[34rem] h-[34rem] bg-[var(--neon-pink)] blur-3xl opacity-10 rounded-full"></div>
+      </div>
 
-    <!-- Filter -->
+      <div class="relative z-10 text-center px-4 py-10 md:py-14">
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+          <span class="text-gradient">The SSBoard </span>
+          <span class="neon-glow text-white">Gallery</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+          A living collection of neon craft — from bold storefronts to cinematic interiors.
+        </p>
+        <div class="mt-6 overflow-hidden">
+          <div class="marquee whitespace-nowrap text-sm tracking-widest text-gray-400/70">
+            <span class="mx-6">NEON •</span><span class="mx-6">CUSTOM LED •</span><span class="mx-6">BRAND INSTALLS •</span><span class="mx-6">ANIMATED LIGHT •</span><span class="mx-6">EVENT VISUALS •</span>
+            <span class="mx-6">NEON •</span><span class="mx-6">CUSTOM LED •</span><span class="mx-6">BRAND INSTALLS •</span><span class="mx-6">ANIMATED LIGHT •</span><span class="mx-6">EVENT VISUALS •</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- FILTER BAR -->
     <div class="flex flex-wrap justify-center gap-3 mb-12">
       <button
         *ngFor="let c of categories"
         (click)="select(c)"
-        class="px-6 py-2 rounded-full transition-all duration-300"
-        [ngClass]="selected === c
-          ? 'bg-[var(--neon-cyan)] text-black font-semibold'
-          : 'glass-effect text-gray-300 hover:border-[var(--neon-cyan)] hover:text-[var(--neon-cyan)]'">
-        {{ c }}
+        class="neon-chip"
+        [class.active]="selected === c">
+        <span class="relative z-[1]">{{ c }}</span>
       </button>
     </div>
 
-    <!-- Gallery Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      <app-glow-card
-        *ngFor="let p of filtered"
-        class="gallery-item overflow-hidden group cursor-pointer">
+    <!-- HIGHLIGHT ROW (Featured) -->
+    <section *ngIf="hasFeatured" class="mb-12">
+      <h2 class="sr-only">Featured</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <ng-container *ngFor="let p of filtered | slice:0:12">
+          <app-glow-card *ngIf="p.featured" class="relative group overflow-hidden rounded-2xl p-0 highlight-card">
+            <div class="relative aspect-[16/10] lg:aspect-[5/4] overflow-hidden">
+              <img [src]="p.image" [alt]="p.title" loading="lazy"
+                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.07]" />
+              <span class="shine"></span>
+              <div class="scanline"></div>
 
-        <div class="relative aspect-[4/5] overflow-hidden">
-          <img
-            [src]="p.image"
-            [alt]="p.title"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-[10px] tracking-wider font-semibold text-[var(--neon-cyan)] uppercase">{{ p.category }}</span>
+                  <span class="badge-pulse">Featured</span>
+                </div>
+                <h3 class="text-white text-xl font-bold leading-snug">{{ p.title }}</h3>
+                <p class="text-gray-300 text-sm mt-1 line-clamp-2">{{ p.description }}</p>
 
-          <!-- Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-xs font-semibold text-[var(--neon-cyan)] uppercase tracking-wider">
-                  {{ p.category }}
-                </span>
-                <span *ngIf="p.featured" class="text-xs bg-[var(--neon-cyan)] text-black px-2 py-1 rounded-full font-semibold">
-                  Featured
-                </span>
+                <div class="mt-4 flex items-center gap-3">
+                  <a href="javascript:void(0)" class="btn-primary px-4 py-2 text-sm">Quick View <span>➜</span></a>
+                  <a href="javascript:void(0)" class="btn-ghost px-4 py-2 text-sm">Details</a>
+                </div>
               </div>
-              <h3 class="text-xl font-bold text-white mb-2">{{ p.title }}</h3>
-              <p class="text-sm text-gray-300 mb-4">{{ p.description }}</p>
-              <button class="flex items-center gap-2 text-[var(--neon-cyan)] hover:text-white transition-colors">
-                <span class="text-sm font-medium">View Details</span>
-              </button>
+            </div>
+          </app-glow-card>
+        </ng-container>
+      </div>
+    </section>
+
+    <!-- MASONRY WALL -->
+    <section>
+      <h2 class="sr-only">All Projects</h2>
+      <div class="columns-1 sm:columns-2 lg:columns-3 2xl:columns-4 gap-6 [column-fill:_balance]">
+        <app-glow-card
+          *ngFor="let p of filtered"
+          class="relative mb-6 break-inside-avoid overflow-hidden rounded-2xl group tilt-card">
+          <div class="relative overflow-hidden">
+            <img [src]="p.image" [alt]="p.title" loading="lazy" decoding="async"
+                 class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.06]" />
+            <span class="shine"></span>
+            <div class="scanline"></div>
+
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                        bg-gradient-to-t from-black/85 via-black/20 to-transparent">
+              <div class="absolute inset-x-0 bottom-0 p-5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-[10px] tracking-wider font-semibold text-[var(--neon-cyan)] uppercase">{{ p.category }}</span>
+                  <span *ngIf="p.featured" class="badge-pulse">Featured</span>
+                </div>
+                <h3 class="text-white text-lg font-bold leading-snug">{{ p.title }}</h3>
+                <p class="text-gray-300 text-sm mt-1 line-clamp-2">{{ p.description }}</p>
+                <div class="mt-4 flex items-center gap-3">
+                  <a class="btn-primary px-4 py-2 text-sm" href="javascript:void(0)">Quick View <span>➜</span></a>
+                  <a class="btn-ghost px-4 py-2 text-sm" href="javascript:void(0)">Details</a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </app-glow-card>
-    </div>
-
-    <!-- Empty State -->
-    <div *ngIf="filtered.length === 0" class="text-center py-20">
-      <div class="glass-effect inline-block p-8 rounded-2xl">
-        <h3 class="text-2xl font-bold text-white mb-2">No projects found</h3>
-        <p class="text-gray-400">Try selecting a different category</p>
+        </app-glow-card>
       </div>
-    </div>
+    </section>
+
+    <!-- CASE STUDY BAND -->
+    <section class="mt-16">
+      <div class="glass-effect rounded-2xl overflow-hidden relative">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute -left-10 top-1/2 -translate-y-1/2 w-[22rem] h-[22rem] bg-[var(--neon-cyan)] blur-3xl opacity-10 rounded-full"></div>
+          <div class="absolute -right-10 top-1/2 -translate-y-1/2 w-[22rem] h-[22rem] bg-[var(--neon-pink)] blur-3xl opacity-10 rounded-full"></div>
+        </div>
+
+        <div class="relative grid md:grid-cols-2">
+          <div class="p-8 md:p-12">
+            <p class="text-[var(--neon-cyan)] text-xs tracking-widest font-semibold uppercase mb-2">Case Study</p>
+            <h3 class="text-2xl md:text-3xl font-extrabold mb-3">Restaurant Facade – “Vivid Hour”</h3>
+            <p class="text-gray-300 leading-relaxed mb-6">
+              We reimagined a compact frontage into a magnetic beacon. Dynamic gradients,
+              programmable chases, and power-efficient LEDs boosted night footfall by 38%.
+            </p>
+            <div class="flex gap-3">
+              <a routerLink="/contact" class="btn-primary px-5 py-3">Start a Project <span>➜</span></a>
+              <a href="javascript:void(0)" class="btn-ghost px-5 py-3">Read More</a>
+            </div>
+          </div>
+          <div class="relative">
+            <img src="/assets/demo/five.jpg" alt="Case study preview"
+                 class="w-full h-full object-cover md:rounded-l-2xl md:rounded-r-none">
+            <span class="shine"></span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- CTA -->
     <div class="mt-20 text-center">
@@ -72,11 +136,11 @@
           Ready to <span class="text-gradient">Create Something Amazing?</span>
         </h2>
         <p class="text-xl text-gray-300 mb-8">
-          Let's bring your vision to life with our custom light-board designs
+          Tell us your idea — we’ll light it up beautifully.
         </p>
-        <button class="btn-primary text-lg px-8 py-4">
-          Start Your Project
-        </button>
+        <a routerLink="/contact" class="btn-primary text-lg px-8 py-4 inline-flex items-center gap-2">
+          Start Your Project <span>➜</span>
+        </a>
       </div>
     </div>
   </div>

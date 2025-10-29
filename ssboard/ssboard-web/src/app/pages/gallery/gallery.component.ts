@@ -30,4 +30,8 @@ export class GalleryComponent {
     this.selected = cat;
     this.filtered = (cat === 'All') ? ALL.slice() : ALL.filter(p => p.category === cat);
   }
+    // ✅ Use this in the template instead of filtered.some(…)
+  get hasFeatured(): boolean {
+    return Array.isArray(this.filtered) && this.filtered.some(p => p.featured);
+  }
 }

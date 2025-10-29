@@ -1,17 +1,22 @@
-<!-- ABOUT PAGE -->
+<!-- ABOUT PAGE (Neon + Clean + Creative) -->
 <div class="min-h-screen">
 
   <!-- Hero -->
   <section class="relative overflow-hidden hero-section">
+    <!-- Soft gradient base -->
     <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
-    <div class="absolute inset-0 pointer-events-none">
-      <div class="absolute -top-16 left-1/3 w-[28rem] h-[28rem] bg-[var(--neon-cyan)] rounded-full blur-3xl opacity-10"></div>
-      <div class="absolute bottom-0 right-1/4 w-[26rem] h-[26rem] bg-[var(--neon-pink)] rounded-full blur-3xl opacity-10"></div>
-    </div>
 
-    <div class="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center">
+    <!-- Glow orbs -->
+    <!-- <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute -top-16 left-1/3 w-[28rem] h-[28rem] bg-[var(--neon-cyan)] rounded-full blur-3xl opacity-10 animate-pulse-glow"></div>
+      <div class="absolute bottom-0 right-1/4 w-[26rem] h-[26rem] bg-[var(--neon-pink)] rounded-full blur-3xl opacity-10 animate-pulse-glow"></div>
+    </div> -->
+
+    <!-- Header -->
+    <div class="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center float-slow">
       <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
-        <span class="text-gradient">About SSBoard</span>
+        <span class="text-gradient">About </span>
+        <span class="neon-glow text-white">SSBoard</span>
       </h1>
       <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
         We design and craft custom light-board experiences that turn ordinary spaces
@@ -22,61 +27,86 @@
 
   <!-- Story + Stats -->
   <section class="px-6 py-14 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <!-- Story -->
     <article class="lg:col-span-2 glass-effect rounded-2xl p-8">
       <h2 class="text-2xl md:text-3xl font-bold mb-4 text-[var(--neon-cyan)]">
         Our Story
       </h2>
       <p class="text-gray-300 leading-relaxed">
-        Founded in Sri Lanka, SSBoard blends <span class="text-gradient font-semibold">engineering precision</span>
-        with <span class="text-gradient font-semibold">artistic vision</span>. From boutique storefronts to
-        large-scale events, our team partners with clients to ideate, prototype,
-        and install lighting features that feel alive. Every piece is crafted
-        with premium materials, modern LEDs, and smart control systems.
+        Founded in Sri Lanka, SSBoard blends
+        <span class="text-gradient font-semibold">engineering precision</span>
+        with <span class="text-gradient font-semibold">artistic vision</span>.
+        From boutique storefronts to large-scale events, our team partners with clients to ideate, prototype,
+        and install lighting features that feel alive. Every piece is crafted with premium materials,
+        modern LEDs, and smart control systems.
       </p>
 
-      <!-- Matching Home Icons -->
+      <!-- Matching Home Icons style (SVG) -->
       <div class="mt-6 grid sm:grid-cols-3 gap-6">
+        <!-- Projects -->
         <div class="feature-card p-6 rounded-xl text-center">
-          <div class="feature-icon text-3xl">⚡</div>
+          <div class="feature-icon">
+            <!-- Sparkles -->
+            <svg viewBox="0 0 24 24" class="w-7 h-7 text-black" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l1.5 3.5L17 8l-3.5 1.5L12 13l-1.5-3.5L7 8l3.5-1.5L12 3z"></path>
+              <path d="M19 13l.75 1.75L22 15.5l-1.75.75L19 18l-.75-1.75L16.5 15.5l1.75-.75L19 13z"></path>
+              <path d="M5 14l.6 1.4L7 16l-1.4.6L5 18l-.6-1.4L3 16l1.4-.6L5 14z"></path>
+            </svg>
+          </div>
           <p class="text-xl font-extrabold feature-title">120+</p>
           <p class="text-gray-400 text-sm">Projects Completed</p>
         </div>
+
+        <!-- Custom -->
         <div class="feature-card p-6 rounded-xl text-center">
-          <div class="feature-icon text-3xl">🎨</div>
+          <div class="feature-icon">
+            <!-- Pen Tool -->
+            <svg viewBox="0 0 24 24" class="w-7 h-7 text-black" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 6l7 3-7 3-7-3 7-3z"></path>
+              <path d="M5 9v6l7 3 7-3V9"></path>
+            </svg>
+          </div>
           <p class="text-xl font-extrabold feature-title">100%</p>
           <p class="text-gray-400 text-sm">Custom-Built</p>
         </div>
+
+        <!-- Satisfaction -->
         <div class="feature-card p-6 rounded-xl text-center">
-          <div class="feature-icon text-3xl">🧠</div>
+          <div class="feature-icon">
+            <!-- Star -->
+            <svg viewBox="0 0 24 24" class="w-7 h-7 text-black" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"></polygon>
+            </svg>
+          </div>
           <p class="text-xl font-extrabold feature-title">4.9/5</p>
           <p class="text-gray-400 text-sm">Client Satisfaction</p>
         </div>
       </div>
     </article>
 
+    <!-- What We Do -->
     <aside class="glass-effect rounded-2xl p-8 overflow-hidden">
       <h3 class="text-xl font-bold mb-5 text-[var(--neon-cyan)]">What We Do</h3>
       <ul class="space-y-3 text-gray-300">
         <li class="flex items-center gap-3">
-          <div class="w-6 h-6 rounded-full bg-[var(--neon-cyan)] flex items-center justify-center text-black text-xs font-bold shadow-lg">⚙️</div>
-          Custom Light Board Design
+          <div class="w-6 h-6 rounded-full bg-[var(--neon-cyan)] grid place-items-center text-black text-[11px] font-bold shadow-lg">⚙</div>
+          Custom Light-Board Design
         </li>
         <li class="flex items-center gap-3">
-          <div class="w-6 h-6 rounded-full bg-[var(--neon-cyan)] flex items-center justify-center text-black text-xs font-bold shadow-lg">💡</div>
+          <div class="w-6 h-6 rounded-full bg-[var(--neon-cyan)] grid place-items-center text-black text-[11px] font-bold shadow-lg">💡</div>
           LED Signage & Brand Installations
         </li>
         <li class="flex items-center gap-3">
-          <div class="w-6 h-6 rounded-full bg-[var(--neon-cyan)] flex items-center justify-center text-black text-xs font-bold shadow-lg">🎛️</div>
+          <div class="w-6 h-6 rounded-full bg-[var(--neon-cyan)] grid place-items-center text-black text-[11px] font-bold shadow-lg">🎛</div>
           Smart Controls & Animations
         </li>
         <li class="flex items-center gap-3">
-          <div class="w-6 h-6 rounded-full bg-[var(--neon-cyan)] flex items-center justify-center text-black text-xs font-bold shadow-lg">🔧</div>
+          <div class="w-6 h-6 rounded-full bg-[var(--neon-cyan)] grid place-items-center text-black text-[11px] font-bold shadow-lg">🛠</div>
           Fabrication, Install & Maintenance
         </li>
       </ul>
 
-      <a routerLink="/contact"
-         class="btn-primary mt-8 block w-full max-w-sm mx-auto justify-center">
+      <a routerLink="/contact" class="btn-primary mt-8 block w-full max-w-sm mx-auto justify-center">
         Start Your Project <span>➜</span>
       </a>
     </aside>
@@ -90,34 +120,55 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div class="feature-card p-8 rounded-2xl text-center">
-        <div class="feature-icon text-3xl">💡</div>
+        <div class="feature-icon">
+          <!-- Lightbulb -->
+          <svg viewBox="0 0 24 24" class="w-7 h-7 text-black" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18h6"></path>
+            <path d="M10 22h4"></path>
+            <path d="M2 12a10 10 0 1 1 20 0c0 4-2.5 6-4 7H6c-1.5-1-4-3-4-7z"></path>
+          </svg>
+        </div>
         <h3 class="text-xl font-bold mb-2 text-[var(--neon-cyan)]">Innovation First</h3>
         <p class="text-gray-400">We experiment, iterate, and push the edge of light-based design.</p>
       </div>
 
       <div class="feature-card p-8 rounded-2xl text-center">
-        <div class="feature-icon text-3xl">🎯</div>
+        <div class="feature-icon">
+          <!-- Target -->
+          <svg viewBox="0 0 24 24" class="w-7 h-7 text-black" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="8"></circle>
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M22 12h-2M4 12H2M12 2v2M12 22v-2"></path>
+          </svg>
+        </div>
         <h3 class="text-xl font-bold mb-2 text-[var(--neon-cyan)]">Client-Centric</h3>
-        <p class="text-gray-400">We co-create every detail to match your brand, audience and goals.</p>
+        <p class="text-gray-400">We co-create every detail to match your brand, audience & goals.</p>
       </div>
 
       <div class="feature-card p-8 rounded-2xl text-center">
-        <div class="feature-icon text-3xl">🧰</div>
+        <div class="feature-icon">
+          <!-- Wrench/Tool -->
+          <svg viewBox="0 0 24 24" class="w-7 h-7 text-black" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a4 4 0 1 0-5.4 5.4L2 19l3 3 7.3-7.3a4 4 0 0 0 2.4-8.4z"></path>
+          </svg>
+        </div>
         <h3 class="text-xl font-bold mb-2 text-[var(--neon-cyan)]">Craft & Quality</h3>
         <p class="text-gray-400">Durable builds, premium LEDs, and clean installs—every time.</p>
       </div>
     </div>
   </section>
 
-  <!-- Timeline -->
+  <!-- Timeline (with center spine) -->
   <section class="px-6 pb-20 max-w-6xl mx-auto">
     <h2 class="text-center text-3xl md:text-4xl font-extrabold mb-10">
       Journey & <span class="text-gradient">Milestones</span>
     </h2>
 
     <div class="relative max-w-3xl mx-auto">
+      <!-- spine -->
       <span class="absolute left-1/2 -translate-x-1/2 h-full w-[2px] bg-[rgba(0,255,224,0.25)]"></span>
 
+      <!-- 2019 -->
       <div class="grid grid-cols-2 gap-6 items-start mb-8">
         <div></div>
         <div class="glass-effect p-5 rounded-xl">
@@ -127,6 +178,7 @@
         </div>
       </div>
 
+      <!-- 2021 -->
       <div class="grid grid-cols-2 gap-6 items-start mb-8">
         <div class="glass-effect p-5 rounded-xl text-right">
           <p class="text-sm text-[var(--neon-cyan)] font-semibold">2021</p>
@@ -136,6 +188,7 @@
         <div></div>
       </div>
 
+      <!-- 2024+ -->
       <div class="grid grid-cols-2 gap-6 items-start">
         <div></div>
         <div class="glass-effect p-5 rounded-xl">
@@ -149,8 +202,10 @@
 
   <!-- CTA -->
   <section class="cta-band relative overflow-hidden">
+    <!-- soft diagonal glow -->
     <div class="absolute inset-0 bg-gradient-to-r from-[rgba(0,255,224,0.12)] via-transparent to-[rgba(255,0,110,0.12)]"></div>
-    <div class="relative z-10 max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6 py-16 md:py-20 text-center float-slow">
       <h3 class="text-3xl md:text-5xl font-extrabold mb-4">
         Ready to <span class="text-gradient">Collaborate</span>?
       </h3>
@@ -162,6 +217,4 @@
       </a>
     </div>
   </section>
-
 </div>
- 

@@ -1,66 +1,83 @@
-<div class="min-h-screen py-20 px-6 max-w-5xl mx-auto">
-  <!-- Page Header -->
-  <div class="text-center mb-16">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4">
-      <span class="text-gradient">Frequently Asked Questions</span>
-    </h1>
-    <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-      Everything you need to know about our light-board design, customization, and services.
-    </p>
+<!-- FAQ PAGE: Creative Neon Glow Style -->
+<div class="min-h-screen py-20 px-6 relative overflow-hidden">
+  <!-- Background Glow Orbs -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-[var(--neon-cyan)] rounded-full blur-[120px] opacity-10 animate-pulse-glow"></div>
+    <div class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-[var(--neon-pink)] rounded-full blur-[120px] opacity-10 animate-pulse-glow"></div>
   </div>
 
-  <!-- FAQ Accordion -->
-  <div class="space-y-6">
-    <div
-      *ngFor="let item of faqs; let i = index"
-      class="glass-effect rounded-2xl p-6 transition-all duration-300 cursor-pointer"
-      (click)="toggle(i)"
-      [class.border-[var(--neon-cyan)]]="openIndex === i"
-      [class.bg-[rgba(0,255,224,0.05)]]="openIndex === i"
-    >
-      <div class="flex justify-between items-center">
-        <div class="flex items-center gap-3">
-          <div
-            class="w-8 h-8 rounded-full bg-[var(--neon-cyan)] text-black flex items-center justify-center font-bold shadow-md"
-          >
-            ?
-          </div>
-          <h3
-            class="text-lg md:text-xl font-semibold text-white hover:text-[var(--neon-cyan)] transition-colors"
-          >
-            {{ item.q }}
-          </h3>
-        </div>
+  <div class="relative z-10 max-w-5xl mx-auto">
+    <!-- Page Header -->
+    <div class="text-center mb-16 float-slow">
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+        <span class="text-gradient">Frequently Asked</span><br />
+        <span class="neon-glow text-white">Questions</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+        Discover how our custom light-board magic works — from design and creation to delivery and installation.
+      </p>
+    </div>
 
-        <div
-          class="text-[var(--neon-cyan)] text-2xl transition-transform duration-300"
-          [class.rotate-45]="openIndex === i"
-        >
-          +
-        </div>
-      </div>
-
+    <!-- FAQ Accordion -->
+    <div class="space-y-6">
       <div
-        class="overflow-hidden transition-all duration-300"
-        [style.maxHeight]="openIndex === i ? '200px' : '0'"
+        *ngFor="let item of faqs; let i = index"
+        (click)="toggle(i)"
+        class="relative overflow-hidden glass-effect rounded-2xl p-6 transition-all duration-500 cursor-pointer group hover:border-[var(--neon-cyan)] hover:shadow-[0_0_20px_rgba(0,255,224,0.3)]"
+        [class.border-[var(--neon-cyan)]]="openIndex === i"
       >
-        <p class="text-gray-400 mt-4 leading-relaxed">
-          {{ item.a }}
-        </p>
+        <!-- Glowing Accent Line -->
+        <div
+          class="absolute left-0 top-0 h-full w-[3px] bg-[var(--neon-cyan)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        ></div>
+
+        <!-- Question Row -->
+        <div class="flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-8 h-8 rounded-full bg-[var(--neon-cyan)] text-black flex items-center justify-center font-bold shadow-lg group-hover:scale-110 transition-transform"
+            >
+              ?
+            </div>
+            <h3
+              class="text-lg md:text-xl font-semibold text-white group-hover:text-[var(--neon-cyan)] transition-colors duration-300"
+            >
+              {{ item.q }}
+            </h3>
+          </div>
+
+          <!-- Toggle icon -->
+          <div
+            class="text-[var(--neon-cyan)] text-3xl font-light transition-transform duration-300"
+            [class.rotate-45]="openIndex === i"
+          >
+            +
+          </div>
+        </div>
+
+        <!-- Answer -->
+        <div
+          class="overflow-hidden transition-all duration-500"
+          [style.maxHeight]="openIndex === i ? '300px' : '0'"
+        >
+          <p class="text-gray-400 mt-4 leading-relaxed">
+            {{ item.a }}
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- CTA -->
-  <div class="text-center mt-16">
-    <p class="text-gray-400 text-lg mb-6">
-      Still have questions? We’d love to hear from you.
-    </p>
-    <a
-      routerLink="/contact"
-      class="btn-primary inline-flex items-center gap-2 px-8 py-4 font-semibold"
-    >
-      Contact Us <span>➜</span>
-    </a>
+    <!-- CTA -->
+    <div class="text-center mt-20 float-slow">
+      <p class="text-gray-400 text-lg mb-6">
+        Still have questions? We’d love to help you bring your vision to light.
+      </p>
+      <a
+        routerLink="/contact"
+        class="btn-primary inline-flex items-center gap-2 px-8 py-4 font-semibold"
+      >
+        Contact Us <span>➜</span>
+      </a>
+    </div>
   </div>
 </div>

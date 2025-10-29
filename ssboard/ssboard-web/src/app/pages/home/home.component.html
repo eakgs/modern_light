@@ -9,40 +9,43 @@
       <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[var(--neon-pink)] rounded-full blur-3xl opacity-10 animate-pulse-glow"></div>
     </div>
 
-    <!-- Floating hero content -->
-    <div class="relative z-10 text-center px-6 max-w-6xl mx-auto float-slow">
-      <h1 #revealEl class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-        <span class="text-gradient">Illuminate Your</span><br />
-        <span class="neon-glow text-white">Brand's Vision</span>
-      </h1>
+    <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
+      <!-- ONLY THIS WRAPPER IS NEW -->
+      <div class="float-slow">
+        <h1 #revealEl class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+          <span class="text-gradient">Illuminate Your</span><br />
+          <span class="neon-glow text-white">Brand's Vision</span>
+        </h1>
 
-      <p #revealEl class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-        Custom light-board designs that transform spaces and captivate audiences. Where creativity meets illumination.
-      </p>
+        <p #revealEl class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+          Custom light-board designs that transform spaces and captivate audiences. Where creativity meets illumination.
+        </p>
 
-      <div #revealEl class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a
-          routerLink="/gallery"
-          class="btn-primary text-lg px-8 py-4 inline-flex items-center justify-center gap-3"
-          aria-label="Explore Our Creations"
-        >
-          <span class="font-semibold tracking-wide">Explore Our Creations</span>
-          <span class="arrow-icon">➜</span>
-        </a>
+        <div #revealEl class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            routerLink="/gallery"
+            class="btn-primary text-lg px-8 py-4 inline-flex items-center justify-center gap-3"
+            aria-label="Explore Our Creations"
+          >
+            <span class="font-semibold tracking-wide">Explore Our Creations</span>
+            <span class="arrow-icon">➜</span>
+          </a>
 
-        <a
-          routerLink="/contact"
-          class="btn-ghost text-lg px-8 py-4 inline-flex items-center justify-center font-semibold"
-          aria-label="Start Your Project"
-        >
-          Start Your Project
-        </a>
+          <a
+            routerLink="/contact"
+            class="btn-ghost text-lg px-8 py-4 inline-flex items-center justify-center font-semibold"
+            aria-label="Start Your Project"
+          >
+            Start Your Project
+          </a>
+        </div>
       </div>
-    </div>
+      <!-- END of float-slow wrapper -->
 
-    <!-- Scroll Indicator (outside the floating wrapper so it stays fixed) -->
-    <div class="scroll-indicator-wrapper mt-10">
-      <div class="scroll-indicator"></div>
+      <!-- Scroll Indicator (UNCHANGED, remains centered & NOT floating) -->
+      <div class="scroll-indicator-wrapper mt-10">
+        <div class="scroll-indicator"></div>
+      </div>
     </div>
   </section>
 
