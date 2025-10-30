@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ssboard.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08746d904ecb644ad378eda92ece9508fd40af1a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ssboard.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ssboard.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

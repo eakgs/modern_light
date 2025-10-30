@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 
 @Component({
-  standalone: true,
   selector: 'app-about',
-  imports: [CommonModule, RouterLink],
   templateUrl: './about.component.html',
+  // styleUrls: ['./about.component.css'] // or .scss if you use that
 })
-export class AboutComponent {}
+export class AboutComponent {
+
+  // 🟢 Your milestones data goes here
+  milestones = [
+    { year: '2019', title: 'SSBoard founded', desc: 'Built our first custom LED boards for local shops.' },
+    { year: '2021', title: 'Smart control animations', desc: 'Introduced programmable effects & remote control.' },
+    { year: '2024+', title: 'Scaling experiences', desc: 'Bigger installs, faster fabrication, greener power usage.' },
+    // You can keep adding more entries if needed
+  ];
+
+  // (optional) — you can add logic here later for animations or scroll triggers
+}

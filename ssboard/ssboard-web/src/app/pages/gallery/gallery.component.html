@@ -1,7 +1,8 @@
 <div class="min-h-screen py-20 px-6">
   <div class="container mx-auto max-w-7xl">
     <!-- HERO / HEADLINE -->
-    <header class="relative overflow-hidden mb-14 rounded-3xl">
+     
+    <header class="relative overflow-hidden mb-3 rounded-3xl">
       <div class="absolute inset-0 pointer-events-none">
         <div class="absolute -top-24 -left-10 w-[38rem] h-[38rem] bg-[var(--neon-cyan)] blur-3xl opacity-10 rounded-full"></div>
         <div class="absolute top-1/2 right-0 w-[34rem] h-[34rem] bg-[var(--neon-pink)] blur-3xl opacity-10 rounded-full"></div>
@@ -15,27 +16,45 @@
         <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
           A living collection of neon craft — from bold storefronts to cinematic interiors.
         </p>
-        <div class="mt-6 overflow-hidden">
-          <div class="marquee whitespace-nowrap text-sm tracking-widest text-gray-400/70">
-            <span class="mx-6">NEON •</span><span class="mx-6">CUSTOM LED •</span><span class="mx-6">BRAND INSTALLS •</span><span class="mx-6">ANIMATED LIGHT •</span><span class="mx-6">EVENT VISUALS •</span>
-            <span class="mx-6">NEON •</span><span class="mx-6">CUSTOM LED •</span><span class="mx-6">BRAND INSTALLS •</span><span class="mx-6">ANIMATED LIGHT •</span><span class="mx-6">EVENT VISUALS •</span>
-          </div>
-        </div>
+        <!-- INFINITE, SEAMLESS MARQUEE (single track, duplicated content) -->
+<div class="mt-6 overflow-hidden relative">
+  <div class="ssb-marquee" role="marquee" aria-label="Scrolling topics">
+    <div class="ssb-marquee__track">
+      <!-- segment A -->
+      <span class="mx-6">NEON </span><span class="mx-6">CUSTOM LED </span>
+      <span class="mx-6">BRAND INSTALLS </span><span class="mx-6">ANIMATED LIGHT </span>
+      <span class="mx-6">EVENT VISUALS </span>
+      <!-- segment B (duplicate A verbatim) -->
+      <span class="mx-6">NEON </span><span class="mx-6">CUSTOM LED </span>
+      <span class="mx-6">BRAND INSTALLS </span><span class="mx-6">ANIMATED LIGHT </span>
+      <span class="mx-6">EVENT VISUALS </span>
+    </div>
+  </div>
+</div>
+
       </div>
     </header>
 
-    <!-- FILTER BAR -->
-    <div class="flex flex-wrap justify-center gap-3 mb-12">
-      <button
-        *ngFor="let c of categories"
-        (click)="select(c)"
-        class="neon-chip"
-        [class.active]="selected === c">
-        <span class="relative z-[1]">{{ c }}</span>
-      </button>
-    </div>
 
-    <!-- HIGHLIGHT ROW (Featured) -->
+<!-- FILTER BAR (Single-line scrollable) -->
+<nav class="filter-bar glass-effect rounded-2xl px-4 py-3 mb-12">
+  <div class="chip-scroll no-scrollbar" role="tablist" aria-label="Gallery categories">
+    <button
+      *ngFor="let c of categories"
+      (click)="select(c)"
+      class="filter-chip"
+      role="tab"
+      [attr.aria-selected]="selected === c"
+      [class.active]="selected === c">
+      {{ c }}
+      <span class="underline" aria-hidden="true"></span>
+    </button>
+  </div>
+</nav>
+
+
+
+    <!-- HIGHLIGHT ROW (Featured)
     <section *ngIf="hasFeatured" class="mb-12">
       <h2 class="sr-only">Featured</h2>
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -64,7 +83,7 @@
           </app-glow-card>
         </ng-container>
       </div>
-    </section>
+    </section> -->
 
     <!-- MASONRY WALL -->
     <section>
